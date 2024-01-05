@@ -3,10 +3,6 @@ const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 var userSchema = new mongoose.Schema(
   {
-    memberId: {
-      type: String,
-      required: true,
-    },
     firstName: {
       type: String,
       required: true,
@@ -25,27 +21,32 @@ var userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    dob: {
+    dateOfBirth: {
       type: String,
       required: true,
     },
-    address: {
+    assignRole: {
+      type: String,
+      required: true,
+    },
+    selectRole: {
+      type: String,
+      required: true,
+    },
+    specialization: {
+      type: String,
+      required: true,
+    },
+    homeTownAddress: {
       type: String,
       required: true,
     },
     city: {
       type: String,
       required: true,
+
     },
-    state: {
-      type: String,
-      required: true,
-    },
-    zipcode: {
-      type: String,
-      required: true,
-    },
-    mobile: {
+    mobileNumber: {
       type: String,
       required: true,
 
@@ -53,65 +54,22 @@ var userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-
     },
-    weight: {
+    username: {
       type: String,
       required: true,
-    },
-    height: {
-      type: String,
-      required: true,
-    },
-    chest: {
-      type: String,
-      required: true,
-    },
-    waist: {
-      type: String,
-      required: true,
-    },
-    thigh: {
-      type: String,
-      required: true,
-    },
-    arms: {
-      type: String,
-      required: true,
-    },
-    fat: {
-      type: String,
-      required: true,
-
-    },
-    userName: {
-      type: String,
-      required: true,
-
     },
     password: {
       type: String,
       required: true,
     },
-    image: {
-      type: String,
-      required: true,
-    },
-    memberShip: {
-      type: String,
-      required: true,
-    },
-    memberShipfrom: {
-      type: String,
-      required: true,
-    },
-    memberShipto: {
+    displayImage: {
       type: String,
       required: true,
     },
     role: {
       type: String,
-      default: "Membership"
+      default: "Staff"
     },
     timestamps: {
       type: Date,
@@ -146,4 +104,4 @@ userSchema.methods.createPasswordResetToken = async function () {
 };
 
 //Export the model
-module.exports = mongoose.model("membership", userSchema);
+module.exports = mongoose.model("staff", userSchema);

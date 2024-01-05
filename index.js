@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/api/user", require('./Router/UserRoute/UserRoute'));
-app.use("/api/membership", require("./Router/MembershipRoute/MembershipRoute"));
+app.use("/api/staff", require("./Router/StaffRoute/StaffRoute"));
 
 app.use(notFound);
 app.use(errorHandler);
