@@ -45,8 +45,7 @@ const department = mongoose.Schema({
         type: String,
         required: true,
     },
-    membershipDescription:
-    {
+    membershipDescription:{
         type: String,
         required: true,
     },
