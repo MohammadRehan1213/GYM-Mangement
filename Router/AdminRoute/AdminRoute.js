@@ -29,10 +29,13 @@ const {
   getOrders,
   updateOrderStatus,
   getAllOrders,
+  getuser
 } = require("../../Controller/AdminCtrl/AdminCtrl");
 const { authMiddleware, isAdmin } = require("../../middlewares/authMiddleware");
 const router = express.Router();
 router.post("/register", createUser);
+router.get("/", getuser);
+
 router.post("/forgot-password-token", forgotPasswordToken);
 
 router.put("/reset-password/:token", resetPassword);

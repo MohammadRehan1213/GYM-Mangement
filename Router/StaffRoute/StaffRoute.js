@@ -29,10 +29,13 @@ const {
   getOrders,
   updateOrderStatus,
   getAllOrders,
+  getuser
 } = require("../../Controller/StaffCtrl/StaffCtrl");
 const { authMiddleware, isAdmin } = require("../../middlewares/authMiddleware");
 const router = express.Router();
 router.post("/staff-register",upload.single('displayImage'),uploadCloudinaryimg, createUser);
+router.get("/", getuser);
+
 router.post("/forgot-password-token", forgotPasswordToken);
 
 router.put("/reset-password/:token", resetPassword);

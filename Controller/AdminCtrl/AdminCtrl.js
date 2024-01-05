@@ -10,6 +10,16 @@ const sendEmail = require("../emailCtrl");
 
 // Create a User 
 
+const getuser = async (req, res) => {
+  try {
+    const result = await User.find()
+    res.send(result)
+  } catch (error) {
+    res.status(404).json(error.message)
+
+  }
+}
+
 const createUser = asyncHandler(async (req, res) => {
   const image = req.uploadedImageUrl
   const email = req.body.email;
@@ -598,4 +608,5 @@ module.exports = {
   updateOrderStatus,
   getAllOrders,
   getOrderByUserId,
+  getuser
 };

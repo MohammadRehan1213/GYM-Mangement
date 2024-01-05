@@ -21,7 +21,6 @@ const getuser = async (req, res) => {
   }
 }
 
-
 const createUser = asyncHandler(async (req, res) => {
   const image = req.uploadedImageUrl
   const email = req.body.email;
