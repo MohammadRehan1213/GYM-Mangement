@@ -167,6 +167,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
       memberShip: findAdmin?.memberShip,
       memberShipfrom: findAdmin?.memberShipfrom,
       memberShipto: findAdmin?.memberShipto,
+      role: findAdmin?.role,
       token: generateToken(findAdmin?._id),
     });
   } else {
