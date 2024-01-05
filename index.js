@@ -24,6 +24,8 @@ app.use("/api/admin", require("./Router/AdminRoute/AdminRoute"));
 app.use("/api/workout", require("./Router/WorkOutRoute/WorkOutRoute"));
 app.use("/api/paymentinvoice", require("./Router/PaymentInvoiceRoute/PaymentInvoiceRoute"));
 app.use("/api/addmembership", require("./Router/MembershipRoute/MembershipRoute"));
+app.use("/api/addproduct", require("./Router/AddProductRoute/AddProductRoute"));
+app.use("/api/addsellproduct", require("./Router/AddSellProductRoute/AddSellProductRoute"));
 
 app.use(notFound);
 app.use(errorHandler);
