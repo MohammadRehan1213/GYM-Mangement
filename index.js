@@ -20,6 +20,7 @@ app.use(cookieParser());
 
 app.use("/api/user", require('./Router/UserRoute/UserRoute'));
 app.use("/api/staff", require("./Router/StaffRoute/StaffRoute"));
+app.use("/api/admin", require("./Router/AdminRoute/AdminRoute"));
 
 app.use(notFound);
 app.use(errorHandler);
