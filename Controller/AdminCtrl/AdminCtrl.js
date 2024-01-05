@@ -123,7 +123,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
   if (!findAdmin) {
     return res.json({ Message: "Invalid Credentials" });
   }
-  if (findAdmin.role !== "Staff") throw new Error("Not Authorised");
+  if (findAdmin.role !== "admin") throw new Error("Not Authorised");
   if (findAdmin && (await findAdmin.isPasswordMatched(password))) {
     const refreshToken = generateRefreshToken(findAdmin?._id);
     const updateuser = await User.findByIdAndUpdate(

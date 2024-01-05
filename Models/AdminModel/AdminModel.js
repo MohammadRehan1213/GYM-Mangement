@@ -34,7 +34,7 @@ var userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      default: "Staff"
+      default: "admin"
     },
     timestamps: {
       type: Date,
