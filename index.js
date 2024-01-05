@@ -21,6 +21,9 @@ app.use(cookieParser());
 app.use("/api/user", require('./Router/UserRoute/UserRoute'));
 app.use("/api/staff", require("./Router/StaffRoute/StaffRoute"));
 app.use("/api/admin", require("./Router/AdminRoute/AdminRoute"));
+app.use("/api/workout", require("./Router/WorkOutRoute/WorkOutRoute"));
+app.use("/api/paymentinvoice", require("./Router/PaymentInvoiceRoute/PaymentInvoiceRoute"));
+app.use("/api/addmembership", require("./Router/MembershipRoute/MembershipRoute"));
 
 app.use(notFound);
 app.use(errorHandler);
