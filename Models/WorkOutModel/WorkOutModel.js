@@ -28,12 +28,12 @@ const department = mongoose.Schema({
     },
     slectdays :
     {
-        type: String,
+        type: [],
         required: true,
     },
     workactivity :
     {
-        type: String,
+        type: [],
         required: true,
     },
     
