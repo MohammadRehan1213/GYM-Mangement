@@ -20,7 +20,15 @@ const getuser = async (req, res) => {
 
   }
 }
+const getiduser = async (req, res) => {
+  try {
+    const result = await User.find({memberId:req.params.memberId})
+    res.send(result)
+  } catch (error) {
+    res.status(404).json(error.message)
 
+  }
+}
 const createUser = asyncHandler(async (req, res) => {
   const image = req.uploadedImageUrl
   const email = req.body.email;
@@ -630,5 +638,6 @@ module.exports = {
   updateOrderStatus,
   getAllOrders,
   getOrderByUserId,
-  getuser
+  getuser,
+  getiduser
 };

@@ -29,11 +29,14 @@ const {
   getOrders,
   updateOrderStatus,
   getAllOrders,
-  getuser
+  getuser,
+  getiduser
 } = require("../../Controller/UserCtrl/UserCtrl");
 const { authMiddleware, isAdmin } = require("../../middlewares/authMiddleware");
 const router = express.Router();
 router.get("/",getuser)
+router.get("/:memberId",getiduser)
+
 router.post("/register",upload.single('image'),uploadCloudinaryimg, createUser);
 router.post("/forgot-password-token", forgotPasswordToken);
 
