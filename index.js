@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use("/api/login", require('./Router/loginRouter'));
 app.use("/api/user", require('./Router/UserRoute/UserRoute'));
 app.use("/api/staff", require("./Router/StaffRoute/StaffRoute"));
 app.use("/api/admin", require("./Router/AdminRoute/AdminRoute"));
