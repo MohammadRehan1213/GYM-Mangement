@@ -10,7 +10,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
 
     const findAdmin = await Admin.findOne({ email, role: "admin" });
     const findUser = await Member.findOne({ email, role: "Membership" });
-    const findSuperAdmin = await Staff.findOne({ email, role: "staff" });
+    const findSuperAdmin = await Staff.findOne({ email, role: "Staff" });
 
     let user;
     let role;
@@ -23,7 +23,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
         role = "Membership";
     } else if (findSuperAdmin) {
         user = findSuperAdmin;
-        role = "staff";
+        role = "Staff";
     } else {
         return res.status(401).json({ message: "Invalid Credentials" });
     }
@@ -39,7 +39,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
                 },
                 { new: true }
             );
-        } else if (role === "staff") {
+        } else if (role === "Staff") {
             await Staff.findByIdAndUpdate(
                 user._id,
                 {
@@ -100,7 +100,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
             };
         }
         else
-            if (role === "staff") {
+            if (role === "Staff") {
                 responseData = {
                     firstName: user.firstName,
                     middleName: user.middleName,
@@ -126,7 +126,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
                 });
         res.json(responseData);
     } else {
-        res.json("Inavalid Mobile Number or Password!")
+        res.json("Inavalid Email or Password!")
     }
 });
 
