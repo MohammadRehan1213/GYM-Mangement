@@ -1,6 +1,6 @@
-const Admin = require("../Models/AdminModel")
-const Member = require("../Models/UserModel")
-const Staff = require("../Models/StaffModel")
+const Admin = require("../Models/AdminModel/AdminModel")
+const Member = require("../Models/UserModel/UserModel")
+const Staff = require("../Models/StaffModel/StaffModel")
 
 const loginAdmin = asyncHandler(async (req, res) => {
     const { password, email } = req.body;
