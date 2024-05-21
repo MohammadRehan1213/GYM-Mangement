@@ -1,7 +1,7 @@
 const Admin = require("../Models/AdminModel/AdminModel")
 const Member = require("../Models/UserModel/UserModel")
 const Staff = require("../Models/StaffModel/StaffModel")
-
+const asyncHandler = require('express-async-handler')
 const loginAdmin = asyncHandler(async (req, res) => {
     const { password, email } = req.body;
 
