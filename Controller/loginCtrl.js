@@ -117,6 +117,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
                     password: user.password,
                     username: user.username,
                     displayImage: user.displayImage,
+                    role: user.role,
                     token: generateToken(user._id),
                 };
             } else
