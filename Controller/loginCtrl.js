@@ -10,7 +10,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
 
     const findAdmin = await Admin.findOne({ email, role: "admin" });
     const findUser = await Member.findOne({ email, role: "Membership" });
-    const findSuperAdmin = await Staff.findOne({ email, role: "Staff" });
+    const findSuperAdmin = await Staff.findOne({ email, role: "staff" });
 
     let user;
     let role;
@@ -23,7 +23,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
         role = "Membership";
     } else if (findSuperAdmin) {
         user = findSuperAdmin;
-        role = "Staff";
+        role = "staff";
     } else {
         return res.status(401).json({ message: "Invalid Credentials" });
     }
@@ -39,7 +39,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
                 },
                 { new: true }
             );
-        } else if (role === "Staff") {
+        } else if (role === "staff") {
             await Staff.findByIdAndUpdate(
                 user._id,
                 {
@@ -100,7 +100,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
             };
         }
         else
-            if (role === "Staff") {
+            if (role === "staff") {
                 responseData = {
                     firstName: user.firstName,
                     middleName: user.middleName,
