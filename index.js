@@ -13,7 +13,7 @@ const cors = require("cors");
 
 dbConnect();
 app.use(morgan("dev"));
-app.use(cors({ origin: "https://gym-link.netlify.app/" }));
+app.use(cors({ origin: "https://gym-link.netlify.app" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
