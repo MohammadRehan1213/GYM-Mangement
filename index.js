@@ -40,7 +40,8 @@ app.use("/api/paymentinvoice", require("./Router/PaymentInvoiceRoute/PaymentInvo
 app.use("/api/addmembership", require("./Router/MembershipRoute/MembershipRoute"));
 app.use("/api/addproduct", require("./Router/AddProductRoute/AddProductRoute"));
 app.use("/api/addsellproduct", require("./Router/AddSellProductRoute/AddSellProductRoute"));
-app.get("/", (req, res) => {
+
+app.get("/get", (req, res) => {
   res.json("welocome")
 })
 app.use(notFound);
