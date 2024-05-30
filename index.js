@@ -13,7 +13,20 @@ const cors = require("cors");
 
 dbConnect();
 app.use(morgan("dev"));
-app.use(cors({ origin: "https://gym-link.netlify.app" }));
+
+const allowedOrigins = ['http://localhost:4200', 'https://gym-link.netlify.app'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
